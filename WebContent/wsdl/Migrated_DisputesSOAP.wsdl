@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/Migrated_Disputes/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ws072_Migrated_Disputes" targetNamespace="http://app.mastercom/Migrated_Disputes/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://app.mastercom/Migrated_Disputes/">
+
+
+            <xsd:element name="ws072" type="tns:ws072"/>
+            <xsd:element name="ws073" type="tns:ws073"/>
+            <xsd:element name="ws072e073falha" type="tns:ws072e073falha"/>
+        
+            <xsd:complexType name="ws072">
+            	<xsd:sequence>
+            		<xsd:element name="ws072-pageSize" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="ws072-pageNumber" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="ws072-activityType" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="ws072-ica" type="xsd:string"/>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws072-key-alias" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws072-key-store-password" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws072-consumer-key" type="xsd:string"/>
+					            		
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="ws073">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="999" minOccurs="0" name="ws073-migrationResponseList" type="tns:migrationResponseList">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws073-totalCount" type="xsd:string"/>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws073-codigo-status" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws073-mensagem-status" type="xsd:string"/>		
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="migrationResponseList">
+            	<xsd:sequence>
+            		<xsd:element name="ws073-claimId" type="xsd:string"/>
+					<xsd:element name="ws073-itemId" type="xsd:string"/>
+					<xsd:element name="ws073-itemType" type="xsd:string"/>
+					<xsd:element name="ws073-mastercomId" type="xsd:string"/>
+					<xsd:element name="ws073-acquirerReferenceData" type="xsd:string"/>
+					<xsd:element name="ws073-issuerReferenceData" type="xsd:string"/>
+					<xsd:element name="ws073-transactionAmount" type="xsd:string"/>
+					<xsd:element name="ws073-banknetReferenceNumber" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="ws072e073falha">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws073-codigo-status" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws073-mensagem-status" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Migrated_DisputesRequest">
+    <wsdl:part element="tns:ws072" name="ws072"/>
+  </wsdl:message>
+  <wsdl:message name="Migrated_DisputesResponse">
+    <wsdl:part element="tns:ws073" name="ws073"/>
+  </wsdl:message>
+  <wsdl:message name="Migrated_DisputesFault">
+  	<wsdl:part element="tns:ws072e073falha" name="ws072e073falha"/>
+  </wsdl:message>
+  <wsdl:portType name="Migrated_Disputes">
+    <wsdl:operation name="Migrated_Disputes">
+      <wsdl:input message="tns:Migrated_DisputesRequest"/>
+      <wsdl:output message="tns:Migrated_DisputesResponse"/>
+            <wsdl:fault message="tns:Migrated_DisputesFault" name="fault"/>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws072_Migrated_DisputesSOAP" type="tns:Migrated_Disputes">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Migrated_Disputes">
+      <soap:operation soapAction="http://app.mastercom/Migrated_Disputes/Migrated_Disputes"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Migrated_Disputes">
+    <wsdl:port binding="tns:ws072_Migrated_DisputesSOAP" name="Migrated_DisputesSOAP">
+      <soap:address location="http://localhost:8080/mastercom/services/Migrated_DisputesSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

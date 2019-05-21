@@ -1,0 +1,58 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Migrated_Disputes WSDL service -->
+
+  <service name="Migrated_DisputesSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/Migrated_Disputes/"/>
+      <parameter name="wsdlServiceElement" value="Migrated_Disputes"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/Migrated_Disputes/"/>
+      <parameter name="wsdlServicePort" value="Migrated_DisputesSOAP"/>
+      <parameter name="className" value="mastercom.app.Migrated_Disputes.Ws072_Migrated_DisputesSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="Migrated_Disputes"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/Migrated_Disputes/"
+        qname="ns:migrationResponseList"
+        type="java:mastercom.app.Migrated_Disputes.MigrationResponseList"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/Migrated_Disputes/"
+        qname="ns:ws072"
+        type="java:mastercom.app.Migrated_Disputes.Ws072"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/Migrated_Disputes/"
+        qname="ns:ws072e073falha"
+        type="java:mastercom.app.Migrated_Disputes.Ws072E073Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/Migrated_Disputes/"
+        qname="ns:ws073"
+        type="java:mastercom.app.Migrated_Disputes.Ws073"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

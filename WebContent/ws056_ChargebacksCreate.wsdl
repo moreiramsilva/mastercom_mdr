@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	name="ChargebacksCreate" targetNamespace="http://app.mastercom/chargebackscreate/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/chargebackscreate/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://app.mastercom/chargebackscreate/">
+
+
+            <xsd:element name="ws056" type="tns:ws056"></xsd:element>
+            <xsd:element name="ws057" type="tns:ws057"></xsd:element>
+            <xsd:element name="ws056e057falha" type="tns:ws056e057falha"></xsd:element>
+        
+            <xsd:complexType name="ws056">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-claim-id"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-currency" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-documentIndicator"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-messageText" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-amount" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-reasonCode" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-isPartialChargeback"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-chargebackType"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-fileAttachment"
+            			type="tns:fileAttachment" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-chargebackEbdfDocuments"
+            			type="tns:chargebackEbdfDocuments" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-Key-Alias"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-Key-Store-Password"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-Cosumer-Key" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws057">
+            	<xsd:sequence>
+            		<xsd:element name="ws057-chargeback-id"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws057-codigo-status"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws057-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws056e057falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws057-codigo-status"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws057-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="fileAttachment">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-filename" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-file" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="chargebackEbdfDocuments">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-transactionInformation" type="tns:transactionInformation" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws056-fraudDrfDocument" type="tns:fraudDrfDocument" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws056-cardholderDisputeChargebackDrfDocument" type="tns:cardholderDisputeChargebackDrfDocument" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws056-pointOfInteractionErrorsDrfDocument" type="tns:pointOfInteractionErrorsDrfDocument" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="transactionInformation">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-acquirerRefDataOrSwitchSerialNum"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-merchantName"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-transactionOrSettlementDate"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-disputedAmount" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="fraudDrfDocument">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-numberOfItems"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-types" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-additionalInformation"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-chargebackRepresentative"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-cardIssuerRegion"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-cardholderVerificationMethod" type="tns:cardholderVerificationMethod" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType
+            	name="pointOfInteractionErrorsDrfDocument">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-transactionAmount"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-type" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-alternateMeansOfPaymentDetails"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-disputeDetails"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-chargebackRepresentative" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+		
+        
+            <xsd:complexType
+            	name="cardholderDisputeChargebackDrfDocument">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-transactionAmount"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-type" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-deliveryDateOfGoodsOrServices"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element
+            			name="ws056-expectedDeliveryDateOfGoodOrServices"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-returnDate" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-cancellationDate"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-cardholderParticipation"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-disputeDetails"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws056-chargebackRepresentative" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="cardholderVerificationMethod">
+            	<xsd:sequence>
+            		<xsd:element name="ws056-onlinePIN" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-offlinePIN" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-signature" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws056-none" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ws056e057Request">
+    <wsdl:part element="tns:ws056" name="ws056"/>
+  </wsdl:message>
+  <wsdl:message name="ws056e057Response">
+    <wsdl:part element="tns:ws057" name="ws057"/>
+  </wsdl:message>
+  <wsdl:message name="ws056e057Fault">
+  	<wsdl:part name="ws056e057falha" element="tns:ws056e057falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ChargebacksCreate">
+    <wsdl:operation name="ws056e057">
+      <wsdl:input message="tns:ws056e057Request"/>
+      <wsdl:output message="tns:ws056e057Response"/>
+            <wsdl:fault name="fault" message="tns:ws056e057Fault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChargebacksCreateSOAP" type="tns:ChargebacksCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ws056e057">
+      <soap:operation soapAction="http://app.mastercom/chargebackscreate/ws056e057"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChargebacksCreate">
+    <wsdl:port binding="tns:ChargebacksCreateSOAP" name="ChargebacksCreateSOAP">
+      <soap:address location="http://localhost:8000/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

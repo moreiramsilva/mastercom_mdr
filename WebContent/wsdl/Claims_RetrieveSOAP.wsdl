@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/searchfortransaction/claimsretrieve/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ws074_Claims_Retrieve" targetNamespace="http://app.mastercom/searchfortransaction/claimsretrieve/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://app.mastercom/searchfortransaction/claimsretrieve/">
+
+
+            <xsd:element name="ws074" type="tns:ws074"/>
+            <xsd:element name="ws075" type="tns:ws075"/>
+            <xsd:element name="ws074e075falha" type="tns:ws074e075falha"/>
+        
+            <xsd:complexType name="ws074">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="1" name="ws075-claim-id" type="xsd:string"/>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-key-alias" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-key-store-password" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-consumer-key" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws075">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-acquirerId" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-acquirerRefNum" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-primaryAccountNum" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-claimId" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-claimType" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-claimValue" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="999" minOccurs="0" name="ws075-standardClaims" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-clearingDueDate" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-clearingNetwork" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-createDate" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-dueDate" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-transactionId" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-isAccurate" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-isAcquirer" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-isIssuer" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-isOpen" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-issuerId" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-lastModifiedBy" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-lastModifiedDate" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-merchantId" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-queueName" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-caseFilingDetails" type="tns:ws075-caseFilingDetails">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-codigo-status" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-mensagem-status" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-retrievalDetails" type="tns:ws075-retrievalDetails">
+            		</xsd:element>
+            		<xsd:element maxOccurs="999" minOccurs="0" name="ws075-chargebackDetails" type="tns:ws075-chargebackDetails">
+            		</xsd:element>
+            		<xsd:element maxOccurs="999" minOccurs="0" name="ws075-feeDetails" type="tns:ws075-feeDetails"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws074e075falha">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-codigo-status" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-mensagem-status" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="ws075-caseFilingDetails">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="caseFilingStatus" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="caseFilingDetails" type="tns:det-caseFilingDetails"/>
+            		<xsd:element maxOccurs="999" minOccurs="0" name="caseFilingRespHistory" type="tns:det-caseFilingRespHistory"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="det-caseFilingDetails">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-claimId" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-claimType" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-caseId" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-caseType" type="xsd:string"/>
+<xsd:element maxOccurs="999" minOccurs="0" name="ws075-det-chargebackRefNum" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-currencyCode" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-customerFilingNumber" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-creditDate" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-chargebackDate" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-reasonCode" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-disputeAmount" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-dueDate" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-filingAgaintstIca" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-filingAs" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-filingIca" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-merchantName" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-primaryAccountNum" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-violationCode" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-violationDate" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-rulingDate" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="0" name="ws075-det-rulingStatus" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="det-caseFilingRespHistory">
+            	<xsd:sequence>
+            		<xsd:element name="det-hist-memo" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="det-hist-action" type="xsd:string">
+            		</xsd:element>
+            		<xsd:element name="det-hist-responseDate" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="ws075-retrievalDetails">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-acquirerRefNum" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-acquirerResponseCd" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-acquirerMemo" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-acquirerResponseDt" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-amount" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-currency" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-claimId" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-createDate" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-docNeeded" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-issuerResponseCd" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-issuerRejectRsnCd" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-issuerMemo" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-issuerResponseDt" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-imageReviewDecision" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-imageReviewDt" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-primaryAcctNum" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-requestId" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-retrievalRequestReason" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-ret-chargebackRefNum" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="ws075-chargebackDetails">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-currency" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-createDate" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-documentIndicator" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-messageText" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-amount" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-reasonCode" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-isPartialChargeback" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-chargebackType" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-chargebackId" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-claimId" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-reversed" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-reversal" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-chargebackRefNum" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws075-feeDetails">
+            	<xsd:sequence>
+            		<xsd:element maxOccurs="1" minOccurs="0" name="ws075-cardAcceptorIdCode" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-cardNumber" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-countryCode" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-currency" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-feeDate" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-destinationMember" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-feeId" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-feeAmount" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-creditSender" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-creditReceiver" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-message" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-reason" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ws075-chargebackRefNum" type="xsd:string"/>
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Claims_RetrieveRequest">
+    <wsdl:part element="tns:ws074" name="ws074"/>
+  </wsdl:message>
+  <wsdl:message name="Claims_RetrieveResponse">
+    <wsdl:part element="tns:ws075" name="ws075"/>
+  </wsdl:message>
+  <wsdl:message name="Claims_RetrieveFault">
+  	<wsdl:part element="tns:ws074e075falha" name="ws074e075falha"/>
+  </wsdl:message>
+  <wsdl:portType name="ws074_Claims_Retrieve">
+    <wsdl:operation name="Claims_Retrieve">
+      <wsdl:input message="tns:Claims_RetrieveRequest"/>
+      <wsdl:output message="tns:Claims_RetrieveResponse"/>
+            <wsdl:fault message="tns:Claims_RetrieveFault" name="fault"/>
+        </wsdl:operation>
+
+  </wsdl:portType>
+  <wsdl:binding name="ws074_Claims_RetrieveSOAP" type="tns:ws074_Claims_Retrieve">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Claims_Retrieve">
+      <soap:operation soapAction="http://app.mastercom/searchfortransaction/claimsretrieve/Claims_Retrieve"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Claims_Retrieve">
+    <wsdl:port binding="tns:ws074_Claims_RetrieveSOAP" name="Claims_RetrieveSOAP">
+      <soap:address location="http://localhost:8080/mastercom/services/Claims_RetrieveSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

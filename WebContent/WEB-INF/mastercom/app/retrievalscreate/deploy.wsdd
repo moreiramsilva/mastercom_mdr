@@ -1,0 +1,50 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RetrievalsCreate WSDL service -->
+
+  <service name="RetrievalsCreateSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/retrievalscreate/"/>
+      <parameter name="wsdlServiceElement" value="RetrievalsCreate"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/retrievalscreate/"/>
+      <parameter name="wsdlServicePort" value="RetrievalsCreateSOAP"/>
+      <parameter name="className" value="mastercom.app.retrievalscreate.Ws060_RetrievalsCreateSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="RetrievalsCreate"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/retrievalscreate/"
+        qname="ns:ws060e061falha"
+        type="java:mastercom.app.retrievalscreate.Ws060E061Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/retrievalscreate/"
+        qname="ns:ws060"
+        type="java:mastercom.app.retrievalscreate.Ws060"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/retrievalscreate/"
+        qname="ns:ws061"
+        type="java:mastercom.app.retrievalscreate.Ws061"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

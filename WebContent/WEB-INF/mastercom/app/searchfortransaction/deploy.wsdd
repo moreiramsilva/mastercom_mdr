@@ -1,0 +1,66 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SearchForTransaction WSDL service -->
+
+  <service name="SearchForTransactionSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/searchfortransaction/"/>
+      <parameter name="wsdlServiceElement" value="SearchForTransaction"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/searchfortransaction/"/>
+      <parameter name="wsdlServicePort" value="SearchForTransactionSOAP"/>
+      <parameter name="className" value="mastercom.app.searchfortransaction.SearchForTransactionSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="SearchForTransaction"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/searchfortransaction/"
+        qname="ns:ws048e049falha"
+        type="java:mastercom.app.searchfortransaction.Ws048E049Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/searchfortransaction/"
+        qname="ns:ws049-clearing-summary"
+        type="java:mastercom.app.searchfortransaction.Ws049ClearingSummary"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/searchfortransaction/"
+        qname="ns:ws049-auth-summary"
+        type="java:mastercom.app.searchfortransaction.Ws049AuthSummary"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/searchfortransaction/"
+        qname="ns:ws049"
+        type="java:mastercom.app.searchfortransaction.Ws049"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/searchfortransaction/"
+        qname="ns:ws048"
+        type="java:mastercom.app.searchfortransaction.Ws048"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

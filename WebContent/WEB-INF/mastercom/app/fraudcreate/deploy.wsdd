@@ -1,0 +1,50 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FraudCreate WSDL service -->
+
+  <service name="ws064_FraudCreateSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/fraudcreate/"/>
+      <parameter name="wsdlServiceElement" value="FraudCreate"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/fraudcreate/"/>
+      <parameter name="wsdlServicePort" value="ws064_FraudCreateSOAP"/>
+      <parameter name="className" value="mastercom.app.fraudcreate.Ws064_FraudCreateSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="FraudCreate"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/fraudcreate/"
+        qname="ns:ws065"
+        type="java:mastercom.app.fraudcreate.Ws065"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/fraudcreate/"
+        qname="ns:ws064"
+        type="java:mastercom.app.fraudcreate.Ws064"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/fraudcreate/"
+        qname="ns:ws064e065falha"
+        type="java:mastercom.app.fraudcreate.Ws064E065Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

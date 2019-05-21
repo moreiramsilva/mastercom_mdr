@@ -1,0 +1,82 @@
+<?xml version="1.0"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ws060_RetrievalsCreate" targetNamespace="http://app.mastercom/retrievalscreate/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/retrievalscreate/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://app.mastercom/retrievalscreate/">
+
+
+            <xsd:element name="ws060" type="tns:ws060"></xsd:element>
+            <xsd:element name="ws061" type="tns:ws061"></xsd:element>
+            <xsd:element name="ws060e061falha" type="tns:ws060e061falha"></xsd:element>
+        
+            <xsd:complexType name="ws060">
+            	<xsd:sequence>
+            		<xsd:element name="ws060-claim-id" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws060-retrievalRequestReason"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws060-docNeeded" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws060-key-alias"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws060-key-store-password"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws060-consumer-key" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws061">
+            	<xsd:sequence>
+            		<xsd:element name="ws061-requestId" type="xsd:string"
+            			minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws061-codigo-status"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws061-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws060e061falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws061-codigo-status"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws061-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrievalsCreateRequest">
+    <wsdl:part element="tns:ws060" name="ws060"/>
+  </wsdl:message>
+  <wsdl:message name="RetrievalsCreateResponse">
+    <wsdl:part element="tns:ws061" name="ws061"/>
+  </wsdl:message>
+  <wsdl:message name="RetrievalsCreateFault">
+  	<wsdl:part name="ws060e061falha" element="tns:ws060e061falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RetrievalsCreate">
+    <wsdl:operation name="RetrievalsCreate">
+      <wsdl:input message="tns:RetrievalsCreateRequest"/>
+      <wsdl:output message="tns:RetrievalsCreateResponse"/>
+            <wsdl:fault name="fault" message="tns:RetrievalsCreateFault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws060_RetrievalsCreateSOAP" type="tns:RetrievalsCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RetrievalsCreate">
+      <soap:operation soapAction="http://app.mastercom/retrievalscreate/RetrievalsCreate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RetrievalsCreate">
+    <wsdl:port binding="tns:ws060_RetrievalsCreateSOAP" name="RetrievalsCreateSOAP">
+      <soap:address location="http://localhost:8080/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

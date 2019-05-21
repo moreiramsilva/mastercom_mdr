@@ -1,0 +1,204 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\b2f00mms\wildfly-12.0.0.Final\standalone\deployments\mastercomEAR.ear\mastercom.war\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="ChargebacksCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="ChargebacksCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.chargebackscreate.ChargebacksCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="ChargebacksCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/chargebackscreate/"/>
+  <ns1:parameter name="wsdlPortType" value="ChargebacksCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/chargebackscreate/"/>
+  <ns2:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns1:fraudDrfDocument" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.FraudDrfDocument" xmlns:ns1="http://app.mastercom/chargebackscreate/" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns2:fileAttachment" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.FileAttachment" xmlns:ns2="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:chargebackEbdfDocuments" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.ChargebackEbdfDocuments" xmlns:ns3="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns4:cardholderDisputeChargebackDrfDocument" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.CardholderDisputeChargebackDrfDocument" xmlns:ns4="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns5:ws056e057falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.Ws056E057Falha" xmlns:ns5="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:transactionInformation" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.TransactionInformation" xmlns:ns6="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns7:ws056" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.Ws056" xmlns:ns7="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:pointOfInteractionErrorsDrfDocument" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.PointOfInteractionErrorsDrfDocument" xmlns:ns8="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:cardholderVerificationMethod" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.CardholderVerificationMethod" xmlns:ns9="http://app.mastercom/chargebackscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:ws057" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.Ws057" xmlns:ns10="http://app.mastercom/chargebackscreate/"/>
+ </ns1:service>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="RetrievalsCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="RetrievalsCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.retrievalscreate.Ws060_RetrievalsCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="RetrievalsCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/retrievalscreate/"/>
+  <ns1:parameter name="wsdlPortType" value="RetrievalsCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/retrievalscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns11:ws060e061falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.retrievalscreate.Ws060E061Falha" xmlns:ns11="http://app.mastercom/retrievalscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns12:ws060" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.retrievalscreate.Ws060" xmlns:ns12="http://app.mastercom/retrievalscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns13:ws061" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.retrievalscreate.Ws061" xmlns:ns13="http://app.mastercom/retrievalscreate/"/>
+ </ns1:service>
+ <ns1:service name="Claims_RetrieveSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="ws074_Claims_Retrieve"/>
+  <ns1:parameter name="className" value="mastercom.app.searchfortransaction.claimsretrieve.Ws074_Claims_RetrieveSOAPSkeleton"/>
+  <ns1:parameter name="wsdlServicePort" value="Claims_RetrieveSOAP"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:parameter name="wsdlServiceElement" value="Claims_Retrieve"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:ws075-chargebackDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075ChargebackDetails" xmlns:ns14="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns15:det-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.DetCaseFilingDetails" xmlns:ns15="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns16:ws074e075falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws074E075Falha" xmlns:ns16="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns17:ws075-feeDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075FeeDetails" xmlns:ns17="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns18:ws074" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws074" xmlns:ns18="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns19:ws075" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075" xmlns:ns19="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:det-caseFilingRespHistory" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.DetCaseFilingRespHistory" xmlns:ns20="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:ws075-retrievalDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075RetrievalDetails" xmlns:ns21="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:ws075-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075CaseFilingDetails" xmlns:ns22="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+ </ns1:service>
+ <ns1:service name="ws064_FraudCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="ws064_FraudCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.fraudcreate.Ws064_FraudCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="FraudCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/fraudcreate/"/>
+  <ns1:parameter name="wsdlPortType" value="FraudCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/fraudcreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns23:ws065" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.fraudcreate.Ws065" xmlns:ns23="http://app.mastercom/fraudcreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns24:ws064" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.fraudcreate.Ws064" xmlns:ns24="http://app.mastercom/fraudcreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns25:ws064e065falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.fraudcreate.Ws064E065Falha" xmlns:ns25="http://app.mastercom/fraudcreate/"/>
+ </ns1:service>
+ <ns1:service name="SearchForTransactionSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="SearchForTransactionSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.searchfortransaction.SearchForTransactionSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="SearchForTransaction"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/searchfortransaction/"/>
+  <ns1:parameter name="wsdlPortType" value="SearchForTransaction"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/searchfortransaction/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns26:ws048e049falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.Ws048E049Falha" xmlns:ns26="http://app.mastercom/searchfortransaction/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns27:ws049-clearing-summary" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.Ws049ClearingSummary" xmlns:ns27="http://app.mastercom/searchfortransaction/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns28:ws049-auth-summary" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.Ws049AuthSummary" xmlns:ns28="http://app.mastercom/searchfortransaction/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns29:ws049" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.Ws049" xmlns:ns29="http://app.mastercom/searchfortransaction/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns30:ws048" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.Ws048" xmlns:ns30="http://app.mastercom/searchfortransaction/"/>
+ </ns1:service>
+ <ns1:service name="ClaimsCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="ClaimsCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.claimscreate.ClaimsCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="ClaimsCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/claimscreate/"/>
+  <ns1:parameter name="wsdlPortType" value="ClaimsCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/claimscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns31:ws050" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimscreate.Ws050" xmlns:ns31="http://app.mastercom/claimscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns32:ws050e051falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimscreate.Ws050E051Falha" xmlns:ns32="http://app.mastercom/claimscreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns33:ws051" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimscreate.Ws051" xmlns:ns33="http://app.mastercom/claimscreate/"/>
+ </ns1:service>
+ <ns1:service name="Migrated_DisputesSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="Migrated_DisputesSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.Migrated_Disputes.Ws072_Migrated_DisputesSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="Migrated_Disputes"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/Migrated_Disputes/"/>
+  <ns1:parameter name="wsdlPortType" value="Migrated_Disputes"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/Migrated_Disputes/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns34:migrationResponseList" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.Migrated_Disputes.MigrationResponseList" xmlns:ns34="http://app.mastercom/Migrated_Disputes/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns35:ws072" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.Migrated_Disputes.Ws072" xmlns:ns35="http://app.mastercom/Migrated_Disputes/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns36:ws072e073falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.Migrated_Disputes.Ws072E073Falha" xmlns:ns36="http://app.mastercom/Migrated_Disputes/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns37:ws073" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.Migrated_Disputes.Ws073" xmlns:ns37="http://app.mastercom/Migrated_Disputes/"/>
+ </ns1:service>
+ <ns1:service name="CaseFilingCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="CaseFilingCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.CaseFilingCreate.Ws058CaseFilingCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="CaseFilingCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:parameter name="wsdlPortType" value="CaseFilingCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns38:caseFilingEbdfDocuments" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.CaseFilingEbdfDocuments" xmlns:ns38="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns39:ws058" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.Ws058" xmlns:ns39="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns40:expeditedBillingDrfDocument" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.ExpeditedBillingDrfDocument" xmlns:ns40="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns41:smsLinkedCaseFilingDrfDocument" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.SmsLinkedCaseFilingDrfDocument" xmlns:ns41="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns42:ws058ws059falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.Ws058Ws059Falha" xmlns:ns42="http://app.mastercom/CaseFilingCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns43:ws059" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.CaseFilingCreate.Ws059" xmlns:ns43="http://app.mastercom/CaseFilingCreate/"/>
+ </ns1:service>
+ <ns1:service name="FeeCreateSOAP" provider="java:RPC" style="document" use="literal">
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="FeeCreateSOAP"/>
+  <ns1:parameter name="className" value="mastercom.app.FeeCreate.FeeCreateSOAPSkeleton"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="allowedMethods" value="*"/>
+  <ns1:parameter name="wsdlServiceElement" value="FeeCreate"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/FeeCreate/"/>
+  <ns1:parameter name="wsdlPortType" value="FeeCreate"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/FeeCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns44:ws068e069falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.FeeCreate.Ws068E069Falha" xmlns:ns44="http://app.mastercom/FeeCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns45:ws068" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.FeeCreate.Ws068" xmlns:ns45="http://app.mastercom/FeeCreate/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns46:ws069" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.FeeCreate.Ws069" xmlns:ns46="http://app.mastercom/FeeCreate/"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

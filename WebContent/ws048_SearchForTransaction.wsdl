@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	name="SearchForTransaction" targetNamespace="http://app.mastercom/searchfortransaction/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/searchfortransaction/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://app.mastercom/searchfortransaction/">
+
+
+    
+            <xsd:element name="ws048" type="tns:ws048"></xsd:element>
+        
+            <xsd:element name="ws049" type="tns:ws049"></xsd:element>
+        
+            <xsd:element name="ws048e049falha" type="tns:ws048e049falha"></xsd:element>
+        
+            <xsd:complexType name="ws048">
+            	<xsd:sequence>
+            		<xsd:element name="ws048-keyalias"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws048-keystorepassword"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws048-consumerkey" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws048-acq-ref-nbr" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-banknet-ref-nbr" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-prim-acct-nbr" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-trn-amt-from" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-trn-amt-to" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-trn-start-date" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws048-trn-end-date" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws049">
+            	<xsd:sequence>
+            		<xsd:element name="ws049-codigostatus"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-mensagemstatus" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws049-auth-sum-count" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws049-auth-message" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws049-auth-summary" type="tns:ws049-auth-summary" minOccurs="0" maxOccurs="999"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws048e049falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws049-codigostatus"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-mensagemstatus" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+        
+            <xsd:complexType name="ws049-auth-summary">
+            	<xsd:sequence>
+            		<xsd:element
+            			name="ws049-aut-orig-msg-type-ident"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-banknet-date"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-trn-amt-usd"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-prim-acct-nbr"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-proc-code"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-trn-amt-loc"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-auth-date-time"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-authent-id"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-card-accept-name"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-card-accept-city"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-card-accept-state" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws049-aut-cur-code"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-chip-present"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-auth-trn-id"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-track1"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-aut-track2"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-clearing-summary"
+            			type="tns:ws049-clearing-summary" minOccurs="0" maxOccurs="999">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		
+            <xsd:complexType name="ws049-clearing-summary">
+            	<xsd:sequence>
+            		<xsd:element name="ws049-cle-prim-acct-nbr"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-trn-amt-loc"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-date-time-loc"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-card-data-input-cap"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element
+            			name="ws049-cle-card-auth-cap"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-card-present"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-acq-ref-nbr"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-card-accept-name"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws049-cle-cur-code" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+
+
+            		<xsd:element name="ws049-cle-trn-id"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ws048e049Request">
+    <wsdl:part element="tns:ws048" name="ws048"/>
+  </wsdl:message>
+  <wsdl:message name="ws048e049Response">
+    <wsdl:part element="tns:ws049" name="ws049"/>
+  </wsdl:message>
+  <wsdl:message name="ws048e049Fault">
+  	<wsdl:part name="ws048e049falha" element="tns:ws048e049falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SearchForTransaction">
+    <wsdl:operation name="ws048e049">
+      <wsdl:input message="tns:ws048e049Request"/>
+      <wsdl:output message="tns:ws048e049Response"/>
+            <wsdl:fault name="fault" message="tns:ws048e049Fault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SearchForTransactionSOAP" type="tns:SearchForTransaction">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ws048e049">
+      <soap:operation soapAction="http://app.mastercom/searchfortransaction/ws048e049"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SearchForTransaction">
+    <wsdl:port binding="tns:SearchForTransactionSOAP" name="SearchForTransactionSOAP">
+      <soap:address location="http://10.206.116.159:7080/searchfortransaction"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

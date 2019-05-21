@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	name="ClaimsCreate" targetNamespace="http://app.mastercom/claimscreate/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/claimscreate/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://app.mastercom/claimscreate/">
+
+
+
+            <xsd:element name="ws050" type="tns:ws050"></xsd:element>
+            <xsd:element name="ws051" type="tns:ws051"></xsd:element>
+            <xsd:element name="ws050e051falha" type="tns:ws050e051falha"></xsd:element>
+        
+            <xsd:complexType name="ws050">
+            	<xsd:sequence>
+<xsd:element name="ws050-disp-amt" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-disp-curr" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-claim-type" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-cle-trn-id" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-aut-trn-id" type="xsd:string"></xsd:element>
+<xsd:element name="ws050-key-alias" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-key-store-password" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+<xsd:element name="ws050-consumer-key" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws051">
+            	<xsd:sequence>
+            		<xsd:element name="ws051-claim-id" type="xsd:string"></xsd:element>
+<xsd:element name="ws051-codigo-status" type="xsd:string"></xsd:element>
+<xsd:element name="ws051-mensagem-status" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws050e051falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws051-codigo-status" type="xsd:string"></xsd:element>
+<xsd:element name="ws051-mensagem-status" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ws050e051Request">
+    <wsdl:part element="tns:ws050" name="ws050"/>
+  </wsdl:message>
+  <wsdl:message name="ws050e051Response">
+    <wsdl:part element="tns:ws051" name="ws051"/>
+  </wsdl:message>
+  <wsdl:message name="ws050e051Fault">
+  	<wsdl:part name="ws050e051falha" element="tns:ws050e051falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClaimsCreate">
+    <wsdl:operation name="ws050e051">
+      <wsdl:input message="tns:ws050e051Request"/>
+      <wsdl:output message="tns:ws050e051Response"/>
+            <wsdl:fault name="fault" message="tns:ws050e051Fault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClaimsCreateSOAP" type="tns:ClaimsCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ws050e051">
+      <soap:operation soapAction="http://app.mastercom/claimscreate/ws050e051"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClaimsCreate">
+    <wsdl:port binding="tns:ClaimsCreateSOAP" name="ClaimsCreateSOAP">
+      <soap:address location="http://localhost:8080/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

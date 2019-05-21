@@ -1,0 +1,78 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ws064_FraudCreate" targetNamespace="http://app.mastercom/fraudcreate/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/fraudcreate/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://app.mastercom/fraudcreate/">
+
+
+            <xsd:element name="ws064" type="tns:ws064"></xsd:element>
+            <xsd:element name="ws064e065falha" type="tns:ws064e065falha"></xsd:element>
+            <xsd:element name="ws065" type="tns:ws065"></xsd:element>
+        
+            <xsd:complexType name="ws064">
+            	<xsd:sequence>
+            		<xsd:element name="ws064-claim-id" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-acc-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-chargeback-ind" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-cvc-inv-ind" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-device-type" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-fraud-type" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-report-date" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-sub-type" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-key-alias" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-key-store-password" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws064-consumer-key" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws065">
+            	<xsd:sequence>
+            		<xsd:element name="ws065-fraud-id" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws065-codigo-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+<xsd:element name="ws065-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws064e065falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws065-codigo-status"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws065-mensagem-status" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="FraudCreateRequest">
+    <wsdl:part element="tns:ws064" name="ws064"/>
+  </wsdl:message>
+  <wsdl:message name="FraudCreateResponse">
+    <wsdl:part element="tns:ws065" name="ws065"/>
+  </wsdl:message>
+  <wsdl:message name="FraudCreateFault">
+  	<wsdl:part name="ws064e065falha" element="tns:ws064e065falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FraudCreate">
+    <wsdl:operation name="FraudCreate">
+      <wsdl:input message="tns:FraudCreateRequest"/>
+      <wsdl:output message="tns:FraudCreateResponse"/>
+            <wsdl:fault name="fault" message="tns:FraudCreateFault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws064_FraudCreateSOAP" type="tns:FraudCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="FraudCreate">
+      <soap:operation soapAction="http://app.mastercom/fraudcreate/FraudCreate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FraudCreate">
+    <wsdl:port binding="tns:ws064_FraudCreateSOAP" name="ws064_FraudCreateSOAP">
+      <soap:address location="http://localhost:8080/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

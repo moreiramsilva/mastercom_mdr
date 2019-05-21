@@ -1,0 +1,106 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ChargebacksCreate WSDL service -->
+
+  <service name="ChargebacksCreateSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/chargebackscreate/"/>
+      <parameter name="wsdlServiceElement" value="ChargebacksCreate"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/chargebackscreate/"/>
+      <parameter name="wsdlServicePort" value="ChargebacksCreateSOAP"/>
+      <parameter name="className" value="mastercom.app.chargebackscreate.ChargebacksCreateSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="ChargebacksCreate"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:fraudDrfDocument"
+        type="java:mastercom.app.chargebackscreate.FraudDrfDocument"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:fileAttachment"
+        type="java:mastercom.app.chargebackscreate.FileAttachment"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:chargebackEbdfDocuments"
+        type="java:mastercom.app.chargebackscreate.ChargebackEbdfDocuments"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:cardholderDisputeChargebackDrfDocument"
+        type="java:mastercom.app.chargebackscreate.CardholderDisputeChargebackDrfDocument"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:ws056e057falha"
+        type="java:mastercom.app.chargebackscreate.Ws056E057Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:transactionInformation"
+        type="java:mastercom.app.chargebackscreate.TransactionInformation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:ws056"
+        type="java:mastercom.app.chargebackscreate.Ws056"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:pointOfInteractionErrorsDrfDocument"
+        type="java:mastercom.app.chargebackscreate.PointOfInteractionErrorsDrfDocument"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:cardholderVerificationMethod"
+        type="java:mastercom.app.chargebackscreate.CardholderVerificationMethod"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/chargebackscreate/"
+        qname="ns:ws057"
+        type="java:mastercom.app.chargebackscreate.Ws057"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/CaseFilingCreate/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ws058CaseFilingCreate" targetNamespace="http://app.mastercom/CaseFilingCreate/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://app.mastercom/CaseFilingCreate/">
+
+            <xsd:element name="ws058" type="tns:ws058"></xsd:element>
+        
+            <xsd:element name="ws059" type="tns:ws059"></xsd:element>
+        
+            <xsd:element name="ws058ws059falha" type="tns:ws058ws059falha"></xsd:element>
+        
+            <xsd:complexType name="ws058">
+            	<xsd:sequence>
+            		<xsd:element name="ws058-keyalias"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws058-keystorepassword"
+            			type="xsd:string" minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws058-consumerkey" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws058-caseType" type="xsd:string"
+            			minOccurs="1" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws058-chargebackRefNum"
+            			type="xsd:string" minOccurs="0" maxOccurs="999">
+            		</xsd:element>
+            		<xsd:element name="ws058-customerFilingNumber"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws058-disputeAmount" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-currencyCode" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-dueDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-fileAttachment" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-filedAgainstIca" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-filingAs" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-filingIca" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-memo" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-primaryAccountNum" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-acquirerRefNum" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-chargebackReasonCode" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-merchantName" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-violationCode" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-violationDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-chargebackDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-creditDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-caseFilingEbdfDocuments" type="tns:caseFilingEbdfDocuments" minOccurs="0" maxOccurs="1" ></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws059">
+            	<xsd:sequence>
+            		<xsd:element name="ws059-caseId" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws059-codigostatus"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws059-mensagemstatus" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="ws058ws059falha">
+            	<xsd:sequence>
+            		<xsd:element name="ws059-codigostatus"
+            			type="xsd:string" minOccurs="0" maxOccurs="1">
+            		</xsd:element>
+            		<xsd:element name="ws059-mensagemstatus" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            	
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+        
+            <xsd:complexType name="caseFilingEbdfDocuments">
+            	<xsd:sequence>
+            		<xsd:element name="expeditedBillingDrfDocument" type="tns:expeditedBillingDrfDocument"></xsd:element>
+					<xsd:element name="smsLinkedCaseFilingDrfDocument" type="tns:smsLinkedCaseFilingDrfDocument"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+    
+            <xsd:complexType name="expeditedBillingDrfDocument">
+            	<xsd:sequence>
+            		<xsd:element name="ws058-cardholderName" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-acquirerRefData" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-transactionDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-transactionAmount" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-disputeDescription" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-certification" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-chargebackRepresentative" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType name="smsLinkedCaseFilingDrfDocument">
+            	<xsd:sequence>
+            		<xsd:element name="ws058-contactName" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-companyOrInstitution" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-contactEmail" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-reasonForFilingCase" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-processorId" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-acquirerSwitchSerialNum" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-transactionOrSettlementDate" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+					<xsd:element name="ws058-numberOfTransactions" type="xsd:string" minOccurs="0" maxOccurs="1" ></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ws058e059Request">
+    <wsdl:part element="tns:ws058" name="ws058"/>
+  </wsdl:message>
+  <wsdl:message name="ws058e059Response">
+    <wsdl:part element="tns:ws059" name="ws059"/>
+  </wsdl:message>
+  <wsdl:message name="ws058e059Fault">
+  	<wsdl:part name="ws058ws059falha" element="tns:ws058ws059falha"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CaseFilingCreate">
+    <wsdl:operation name="ws058e059">
+      <wsdl:input message="tns:ws058e059Request"/>
+      <wsdl:output message="tns:ws058e059Response"/>
+            <wsdl:fault name="fault" message="tns:ws058e059Fault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ws058CaseFilingCreateSOAP" type="tns:CaseFilingCreate">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ws058e059">
+      <soap:operation soapAction="http://app.mastercom/CaseFilingCreate/ws058e059"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CaseFilingCreate">
+    <wsdl:port binding="tns:ws058CaseFilingCreateSOAP" name="CaseFilingCreateSOAP">
+      <soap:address location="http://10.206.116.188:8080/mastercom/services/CaseFilingCreate"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
