@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -44,16 +44,7 @@
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns9:cardholderVerificationMethod" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.CardholderVerificationMethod" xmlns:ns9="http://app.mastercom/chargebackscreate/"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:ws057" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.chargebackscreate.Ws057" xmlns:ns10="http://app.mastercom/chargebackscreate/"/>
  </ns1:service>
- <ns1:service name="AdminService" provider="java:MSG">
-  <ns1:parameter name="allowedMethods" value="AdminService"/>
-  <ns1:parameter name="enableRemoteAdmin" value="false"/>
-  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
-  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
- </ns1:service>
- <ns1:service name="Version" provider="java:RPC">
-  <ns1:parameter name="allowedMethods" value="getVersion"/>
-  <ns1:parameter name="className" value="org.apache.axis.Version"/>
- </ns1:service>
+
  <ns1:service name="RetrievalsCreateSOAP" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="sendMultiRefs" value="false"/>
   <ns1:parameter name="wsdlServicePort" value="RetrievalsCreateSOAP"/>
@@ -73,20 +64,20 @@
   <ns1:parameter name="allowedMethods" value="*"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="ws074_Claims_Retrieve"/>
-  <ns1:parameter name="className" value="mastercom.app.searchfortransaction.claimsretrieve.Ws074_Claims_RetrieveSOAPSkeleton"/>
+  <ns1:parameter name="className" value="mastercom.app.claimsretrieve.Ws074_Claims_RetrieveSOAPSkeleton"/>
   <ns1:parameter name="wsdlServicePort" value="Claims_RetrieveSOAP"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://app.mastercom/claimsretrieve/"/>
   <ns1:parameter name="wsdlServiceElement" value="Claims_Retrieve"/>
-  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:ws075-chargebackDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075ChargebackDetails" xmlns:ns14="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns15:det-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.DetCaseFilingDetails" xmlns:ns15="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns16:ws074e075falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws074E075Falha" xmlns:ns16="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns17:ws075-feeDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075FeeDetails" xmlns:ns17="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns18:ws074" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws074" xmlns:ns18="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns19:ws075" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075" xmlns:ns19="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:det-caseFilingRespHistory" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.DetCaseFilingRespHistory" xmlns:ns20="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:ws075-retrievalDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075RetrievalDetails" xmlns:ns21="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:ws075-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.searchfortransaction.claimsretrieve.Ws075CaseFilingDetails" xmlns:ns22="http://app.mastercom/searchfortransaction/claimsretrieve/"/>
+  <ns1:parameter name="schemaUnqualified" value="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:ws075-chargebackDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws075ChargebackDetails" xmlns:ns14="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns15:det-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.DetCaseFilingDetails" xmlns:ns15="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns16:ws074e075falha" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws074E075Falha" xmlns:ns16="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns17:ws075-feeDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws075FeeDetails" xmlns:ns17="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns18:ws074" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws074" xmlns:ns18="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns19:ws075" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws075" xmlns:ns19="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:det-caseFilingRespHistory" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.DetCaseFilingRespHistory" xmlns:ns20="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:ws075-retrievalDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws075RetrievalDetails" xmlns:ns21="http://app.mastercom/claimsretrieve/"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:ws075-caseFilingDetails" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mastercom.app.claimsretrieve.Ws075CaseFilingDetails" xmlns:ns22="http://app.mastercom/claimsretrieve/"/>
  </ns1:service>
  <ns1:service name="ws064_FraudCreateSOAP" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="sendMultiRefs" value="false"/>

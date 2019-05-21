@@ -1,0 +1,98 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Claims_Retrieve WSDL service -->
+
+  <service name="Claims_RetrieveSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://app.mastercom/claimsretrieve/"/>
+      <parameter name="wsdlServiceElement" value="Claims_Retrieve"/>
+      <parameter name="schemaUnqualified" value="http://app.mastercom/claimsretrieve/"/>
+      <parameter name="wsdlServicePort" value="Claims_RetrieveSOAP"/>
+      <parameter name="className" value="mastercom.app.claimsretrieve.Ws074_Claims_RetrieveSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="ws074_Claims_Retrieve"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws075-chargebackDetails"
+        type="java:mastercom.app.claimsretrieve.Ws075ChargebackDetails"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:det-caseFilingDetails"
+        type="java:mastercom.app.claimsretrieve.DetCaseFilingDetails"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws074e075falha"
+        type="java:mastercom.app.claimsretrieve.Ws074E075Falha"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws075-feeDetails"
+        type="java:mastercom.app.claimsretrieve.Ws075FeeDetails"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws074"
+        type="java:mastercom.app.claimsretrieve.Ws074"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws075"
+        type="java:mastercom.app.claimsretrieve.Ws075"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:det-caseFilingRespHistory"
+        type="java:mastercom.app.claimsretrieve.DetCaseFilingRespHistory"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws075-retrievalDetails"
+        type="java:mastercom.app.claimsretrieve.Ws075RetrievalDetails"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://app.mastercom/claimsretrieve/"
+        qname="ns:ws075-caseFilingDetails"
+        type="java:mastercom.app.claimsretrieve.Ws075CaseFilingDetails"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

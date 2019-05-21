@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/searchfortransaction/claimsretrieve/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ws074_Claims_Retrieve" targetNamespace="http://app.mastercom/searchfortransaction/claimsretrieve/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://app.mastercom/claimsretrieve/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ws074_Claims_Retrieve" targetNamespace="http://app.mastercom/claimsretrieve/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://app.mastercom/searchfortransaction/claimsretrieve/">
+    <xsd:schema targetNamespace="http://app.mastercom/claimsretrieve/">
+
+
             <xsd:element name="ws074" type="tns:ws074"></xsd:element>
             <xsd:element name="ws075" type="tns:ws075"></xsd:element>
             <xsd:element name="ws074e075falha" type="tns:ws074e075falha"></xsd:element>
         
             <xsd:complexType name="ws074">
             	<xsd:sequence>
-            		<xsd:element name="ws075-claim-id" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
-            		<xsd:element name="ws075-key-alias" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
-					<xsd:element name="ws075-key-store-password" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
-					<xsd:element name="ws075-consumer-key" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws074-claim-id" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+            		<xsd:element name="ws074-key-alias" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws074-key-store-password" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+					<xsd:element name="ws074-consumer-key" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
             	</xsd:sequence>
             </xsd:complexType>
             
@@ -230,12 +232,13 @@
       <wsdl:input message="tns:Claims_RetrieveRequest"/>
       <wsdl:output message="tns:Claims_RetrieveResponse"/>
             <wsdl:fault name="fault" message="tns:Claims_RetrieveFault"></wsdl:fault>
-        </wsdl:operation>
+        </wsdl:operation>
+
   </wsdl:portType>
   <wsdl:binding name="ws074_Claims_RetrieveSOAP" type="tns:ws074_Claims_Retrieve">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <wsdl:operation name="Claims_Retrieve">
-      <soap:operation soapAction="http://app.mastercom/searchfortransaction/claimsretrieve/Claims_Retrieve"/>
+      <soap:operation soapAction="http://app.mastercom/claimsretrieve/Claims_Retrieve"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -246,7 +249,7 @@
   </wsdl:binding>
   <wsdl:service name="Claims_Retrieve">
     <wsdl:port binding="tns:ws074_Claims_RetrieveSOAP" name="Claims_RetrieveSOAP">
-      <soap:address location="http://www.example.org/"/>
+      <soap:address location="http://10.206.116.188:8080/mastercom/services/Claims_RetrieveSOAP"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
