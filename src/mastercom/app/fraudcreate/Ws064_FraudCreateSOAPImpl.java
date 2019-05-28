@@ -49,7 +49,7 @@ public class Ws064_FraudCreateSOAPImpl implements mastercom.app.fraudcreate.Frau
     		ws065.setWs065MensagemStatus(CommonMsg.MSG_STATUS_SUCSS);
     		ws065.setWs065CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
     		
-    		ws065.setWs065FraudId(map.get("fraudId").toString());
+    		ws065.setWs065FraudId((String)map.get("fraudId"));
     	}
     	return ws065;
     }

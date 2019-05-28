@@ -53,7 +53,7 @@ public class FeeCreateSOAPImpl implements mastercom.app.FeeCreate.FeeCreate_Port
 			ws069.setWs069MensagemStatus(CommonMsg.MSG_STATUS_SUCSS);
 			ws069.setWs069CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
 
-			ws069.setWs069FeeId(map.get("feeId").toString());
+			ws069.setWs069FeeId((String)map.get("feeId"));
 		}
 		return ws069;
 	}

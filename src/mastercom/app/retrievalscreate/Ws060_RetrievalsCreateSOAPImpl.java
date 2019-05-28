@@ -50,7 +50,7 @@ public class Ws060_RetrievalsCreateSOAPImpl implements mastercom.app.retrievalsc
     		ws061.setWs061MensagemStatus(CommonMsg.MSG_STATUS_SUCSS);
     		ws061.setWs061CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
     		
-    		ws061.setWs061RequestId(map.get("requestId").toString());
+    		ws061.setWs061RequestId((String)map.get("requestId"));
     	}
     	return ws061;
     }

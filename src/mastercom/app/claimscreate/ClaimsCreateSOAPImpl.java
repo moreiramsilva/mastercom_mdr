@@ -52,7 +52,7 @@ public class ClaimsCreateSOAPImpl implements mastercom.app.claimscreate.ClaimsCr
     		ws051.setWs051MensagemStatus(CommonMsg.MSG_STATUS_SUCSS);
     		ws051.setWs051CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
     		
-    		ws051.setWs051ClaimId(map.get("claimId").toString());
+    		ws051.setWs051ClaimId((String)map.get("claimId"));
     	}
     	return ws051;
     }

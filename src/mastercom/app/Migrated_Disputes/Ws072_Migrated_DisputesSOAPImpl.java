@@ -54,7 +54,7 @@ public class Ws072_Migrated_DisputesSOAPImpl implements mastercom.app.Migrated_D
 			ws073.setWs073CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
 
 			if(!"".equals(map.get("totalCount")))
-				ws073.setWs073TotalCount(map.get("totalCount").toString());
+				ws073.setWs073TotalCount(map.get("totalCount")  != null ? map.get("totalCount").toString() : "");
 			
 			if(map.get("migrationResponseList") instanceof ArrayList<?>) {
 				MigrationResponseList[] migre = new MigrationResponseList[((ArrayList<?>) map.get("migrationResponseList")).size()];

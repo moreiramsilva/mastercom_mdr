@@ -48,6 +48,7 @@ public class Ws058CaseFilingCreateSOAPImpl implements mastercom.app.CaseFilingCr
     	if(map != null && map.get("Erro") == null) {
     		ws059.setWs059Mensagemstatus(CommonMsg.MSG_STATUS_SUCSS);
     		ws059.setWs059Codigostatus(CommonMsg.COD_STATUS_SUCSS);
+    		ws059.setWs059CaseId((String)map.get("caseId"));
     	}
     	
     	return ws059;

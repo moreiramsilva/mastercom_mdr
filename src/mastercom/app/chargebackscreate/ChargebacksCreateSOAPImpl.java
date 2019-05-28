@@ -52,7 +52,7 @@ public class ChargebacksCreateSOAPImpl implements mastercom.app.chargebackscreat
     		ws057.setWs057MensagemStatus(CommonMsg.MSG_STATUS_SUCSS);
     		ws057.setWs057CodigoStatus(CommonMsg.COD_STATUS_SUCSS);
     		
-    		ws057.setWs057ChargebackId(map.get("chargebackId").toString());
+    		ws057.setWs057ChargebackId((String)map.get("chargebackId"));
     	}
 		return ws057;
     }

@@ -60,22 +60,22 @@ public class SearchForTransactionSOAPImpl implements mastercom.app.searchfortran
     			int j = 0;
     			for(Object item : (ArrayList<?>) map.get("authorizationSummary")) {
     				authSum[j] = new Ws049AuthSummary();
-    				authSum[j].setWs049AutOrigMsgTypeIdent(((Map<String, Object>) item).get("originalMessageTypeIdentifier").toString());
-    				authSum[j].setWs049AutBanknetDate(((Map<String, Object>) item).get("banknetDate").toString());
-    				authSum[j].setWs049AutTrnAmtUsd(((Map<String, Object>) item).get("transactionAmountUsd").toString());
-    				authSum[j].setWs049AutPrimAcctNbr(((Map<String, Object>) item).get("primaryAccountNumber").toString());
-    				authSum[j].setWs049AutProcCode(((Map<String, Object>) item).get("processingCode").toString());
-    				authSum[j].setWs049AutTrnAmtLoc(((Map<String, Object>) item).get("transactionAmountLocal").toString());
-    				authSum[j].setWs049AutAuthDateTime(((Map<String, Object>) item).get("authorizationDateAndTime").toString());
-    				authSum[j].setWs049AutAuthentId(((Map<String, Object>) item).get("authenticationId").toString());
-    				authSum[j].setWs049AutCardAcceptName(((Map<String, Object>) item).get("cardAcceptorName").toString());
-    				authSum[j].setWs049AutCardAcceptCity(((Map<String, Object>) item).get("cardAcceptorCity").toString());
-    				authSum[j].setWs049AutCardAcceptState(((Map<String, Object>) item).get("cardAcceptorState").toString());
-    				authSum[j].setWs049AutCurCode(((Map<String, Object>) item).get("currencyCode").toString());
-    				authSum[j].setWs049AutChipPresent(((Map<String, Object>) item).get("chipPresent").toString());
-    				authSum[j].setWs049AutAuthTrnId(((Map<String, Object>) item).get("transactionId").toString());
-    				authSum[j].setWs049AutTrack1(((Map<String, Object>) item).get("track1").toString());
-    				authSum[j].setWs049AutTrack2(((Map<String, Object>) item).get("track2").toString());
+    	               authSum[j].setWs049AutOrigMsgTypeIdent( ((Map<String, Object>) item).get("originalMessageTypeIdentifier") != null ? ((Map<String, Object>) item).get("originalMessageTypeIdentifier").toString() : "");
+    	               authSum[j].setWs049AutBanknetDate( ((Map<String, Object>) item).get("banknetDate") != null ? ((Map<String, Object>) item).get("banknetDate").toString() : "");
+    	               authSum[j].setWs049AutTrnAmtUsd( ((Map<String, Object>) item).get("transactionAmountUsd") != null ? ((Map<String, Object>) item).get("transactionAmountUsd").toString() : "");
+    	               authSum[j].setWs049AutPrimAcctNbr( ((Map<String, Object>) item).get("primaryAccountNumber") != null ? ((Map<String, Object>) item).get("primaryAccountNumber").toString() : "");
+    	               authSum[j].setWs049AutProcCode( ((Map<String, Object>) item).get("processingCode") != null ? ((Map<String, Object>) item).get("processingCode").toString() : "");
+    	               authSum[j].setWs049AutTrnAmtLoc( ((Map<String, Object>) item).get("transactionAmountLocal") != null ? ((Map<String, Object>) item).get("transactionAmountLocal").toString() : "");
+    	               authSum[j].setWs049AutAuthDateTime( ((Map<String, Object>) item).get("authorizationDateAndTime") != null ? ((Map<String, Object>) item).get("authorizationDateAndTime").toString() : "");
+    	               authSum[j].setWs049AutAuthentId( ((Map<String, Object>) item).get("authenticationId") != null ? ((Map<String, Object>) item).get("authenticationId").toString() : "");
+    	               authSum[j].setWs049AutCardAcceptName( ((Map<String, Object>) item).get("cardAcceptorName") != null ? ((Map<String, Object>) item).get("cardAcceptorName").toString() : "");
+    	               authSum[j].setWs049AutCardAcceptCity( ((Map<String, Object>) item).get("cardAcceptorCity") != null ? ((Map<String, Object>) item).get("cardAcceptorCity").toString() : "");
+    	               authSum[j].setWs049AutCardAcceptState( ((Map<String, Object>) item).get("cardAcceptorState") != null ? ((Map<String, Object>) item).get("cardAcceptorState").toString() : "");
+    	               authSum[j].setWs049AutCurCode( ((Map<String, Object>) item).get("currencyCode") != null ? ((Map<String, Object>) item).get("currencyCode").toString() : "");
+    	               authSum[j].setWs049AutChipPresent( ((Map<String, Object>) item).get("chipPresent") != null ? ((Map<String, Object>) item).get("chipPresent").toString() : "");
+    	               authSum[j].setWs049AutAuthTrnId( ((Map<String, Object>) item).get("transactionId") != null ? ((Map<String, Object>) item).get("transactionId").toString() : "");
+    	               authSum[j].setWs049AutTrack1( ((Map<String, Object>) item).get("track1") != null ? ((Map<String, Object>) item).get("track1").toString() : "");
+    	               authSum[j].setWs049AutTrack2( ((Map<String, Object>) item).get("track2") != null ? ((Map<String, Object>) item).get("track2").toString() : "");
     				
     				if(((Map<String, Object>) item).get("clearingSummary") != null && ((Map<String, Object>) item).get("clearingSummary") instanceof ArrayList<?>) {
     					
@@ -83,15 +83,15 @@ public class SearchForTransactionSOAPImpl implements mastercom.app.searchfortran
     					int i = 0;
     					for(Object cs_item : (ArrayList<?>) ((Map<String, Object>) item).get("clearingSummary")) {
     						cs[i] = new Ws049ClearingSummary();
-    						cs[i].setWs049ClePrimAcctNbr(((Map<String, Object>) cs_item).get("primaryAccountNumber").toString());
-    						cs[i].setWs049CleTrnAmtLoc(((Map<String, Object>) cs_item).get("transactionAmountLocal").toString());
-    						cs[i].setWs049CleDateTimeLoc(((Map<String, Object>) cs_item).get("dateAndTimeLocal").toString());
     						cs[i].setWs049CleCardDataInputCap(((Map<String, Object>) cs_item).get("cardDataInputCapabililty") != null ? ((Map<String, Object>) cs_item).get("cardDataInputCapabililty").toString() : "");
-    						cs[i].setWs049CleCardAuthCap(((Map<String, Object>) cs_item).get("cardholderAuthenticationCapability").toString());
-    						cs[i].setWs049CleAcqRefNbr(((Map<String, Object>) cs_item).get("acquirerReferenceNumber").toString());
-    						cs[i].setWs049CleCardAcceptName(((Map<String, Object>) cs_item).get("cardAcceptorName").toString());
-    						cs[i].setWs049CleCurCode(((Map<String, Object>) cs_item).get("currencyCode").toString());
-    						cs[i].setWs049CleTrnId(((Map<String, Object>) cs_item).get("transactionId").toString());
+                            cs[i].setWs049ClePrimAcctNbr( ((Map<String, Object>) cs_item).get("primaryAccountNumber") != null ? ((Map<String, Object>) cs_item).get("primaryAccountNumber").toString() : "");
+                            cs[i].setWs049CleTrnAmtLoc( ((Map<String, Object>) cs_item).get("transactionAmountLocal") != null ? ((Map<String, Object>) cs_item).get("transactionAmountLocal").toString() : "");
+                            cs[i].setWs049CleDateTimeLoc( ((Map<String, Object>) cs_item).get("dateAndTimeLocal") != null ? ((Map<String, Object>) cs_item).get("dateAndTimeLocal").toString() : "");
+                            cs[i].setWs049CleCardAuthCap( ((Map<String, Object>) cs_item).get("cardholderAuthenticationCapability") != null ? ((Map<String, Object>) cs_item).get("cardholderAuthenticationCapability").toString() : "");
+                            cs[i].setWs049CleAcqRefNbr( ((Map<String, Object>) cs_item).get("acquirerReferenceNumber") != null ? ((Map<String, Object>) cs_item).get("acquirerReferenceNumber").toString() : "");
+                            cs[i].setWs049CleCardAcceptName( ((Map<String, Object>) cs_item).get("cardAcceptorName") != null ? ((Map<String, Object>) cs_item).get("cardAcceptorName").toString() : "");
+                            cs[i].setWs049CleCurCode( ((Map<String, Object>) cs_item).get("currencyCode") != null ? ((Map<String, Object>) cs_item).get("currencyCode").toString() : "");
+                            cs[i].setWs049CleTrnId( ((Map<String, Object>) cs_item).get("transactionId") != null ? ((Map<String, Object>) cs_item).get("transactionId").toString() : "");
     						i += 1;
     					}
     					authSum[j].setWs049ClearingSummary(cs);
